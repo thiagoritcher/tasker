@@ -2,6 +2,15 @@
 
 Simple file based task manager. 
 
+## Installation
+
+Requires Babashka or Clojure
+
+Update the DIR directory inside task script 
+
+Copy the task script to the PATH
+
+
 ## Why
 
 I needed a simple way to create files to be used as tasks descriptions and git commit messages.
