@@ -1,0 +1,1 @@
+{:tasks {:id #uuid "66465645-12bb-4399-9bfc-a95696bcd76c", :store-location ".task/tasks/", :done-location ".task/done/", :id-gen :uuid}}
