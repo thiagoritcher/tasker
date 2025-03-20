@@ -1,0 +1,3 @@
+#!/bin/bash
+DIR=/home/thiago/dev/tmp/tasker/
+bb -Sdeps "{:deps {tasker/tasker {:local/root \"$DIR\"}}}" -m task.core "$1" "$2" "$3"
