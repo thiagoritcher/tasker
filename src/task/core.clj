@@ -19,7 +19,7 @@
       (filter (fn[file] (s/starts-with? (.getName file) strfiltr )) files)))
 
 (defn init-config [_]
-  (write-config {:tasks {:number 1}})
+  (write-config {:tasks {:number 1 :store-location ".tasks"}})
   "Initializing .tasks dir" 
   )
 
@@ -32,9 +32,11 @@
         body (second args) 
         config (read-config)
         current (format "%03d" (get-in config [:tasks :number]))
+        store-location  (get-in config [:tasks :store-location])
         fname (str current "-" desc)]
 
-    (spit (str fname ".md") (str "# " fname "\n\n" body "\n"))
+    (spit (str store-location "/" fname ".md") 
+          (str "# " fname "\n\n" body "\n"))
 
     (write-config (update-in config [:tasks :number] inc))
     (str "Task \"" fname "\" created")))
